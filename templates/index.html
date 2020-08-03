@@ -1,0 +1,69 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Aug  3 12:04:00 2020
+
+@author: U6067583
+"""
+
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+</head>
+
+<body bgcolor=#d4a3ae>
+    <img src='static\loan1.jpg' height='500px' width='800px' align='left'/>
+<div class="login">
+ <center>
+
+	<h1>Loan Defaulter Prediction</h1><br><br>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post" >
+    	<b> 
+        	<table>
+            	<tr>
+                	<td>Term :</td>
+                	<td><input type="text" name="ApprovalFY"  required="required" /></td>
+                </tr>
+                <tr>
+                	<td>UrbanRural :</td>
+                	<td><input type="text" name="Term"  required="required" /></td>
+                </tr>
+                <tr>
+                	<td>GrAppv :</td>
+                	<td><input type="text" name="NewExist"  required="required" /></td>
+                </tr>
+               <tr>
+                	<td>FranchiseCode :</td>
+                	<td><input type="text" name="UrbanRural"  required="required" /></td>
+                </tr>
+                 <tr>
+                	<td>FranchiseCode :</td>
+                	<td><input type="text" name="RevLineCr"  required="required" /></td>
+                </tr>
+                 <tr>
+                	<td>FranchiseCode :</td>
+                	<td><input type="text" name="FranchiseCode"  required="required" /></td>
+                </tr>
+                                
+            
+          </table>
+        
+         
+             <br><button type="submit" class="btn btn-primary btn-block btn-large" style="height:50px;width:100px"><b>Predict</b></button>
+         
+        </b>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
