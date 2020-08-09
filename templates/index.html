@@ -1,0 +1,146 @@
+<!--  -*- coding: utf-8 -*-
+# """
+# Created on Mon Aug  3 12:04:00 2020
+
+# @author: U6067583
+# """ -->
+
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+
+
+<style>
+body  {
+  
+  background-color: #cccccc;
+background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  background-color: #3CBC8D;
+  color: white;
+</style>
+
+
+<style>
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 9px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  height:48px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+
+</head>
+
+
+
+<body bgcolor=#d4a3ae>
+
+      
+
+
+<div class="login" style="height:1000px; background:url('../loan.jpg')">
+ <center>
+
+	<h1 style ="color:white">Loan Defaulter Prediction</h1><br><br>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post" >
+    	<b> 
+        	<table>
+            	<tr>
+                	<td style ="color:white" >ApprovalFY :</td>
+                	<td><input type="text" name="ApprovalFY"  required="required" /></td>
+                </tr>
+                <tr>
+                	<td style ="color:white" >Term :</td>
+                	<td><input type="text" name="Term"  required="required" /></td>
+                </tr>
+                <tr>
+                	<td style ="color:white">NewExist :</td>
+                	<td><input type="text" name="NewExist"  required="required" /></td>
+                </tr>
+               <tr>
+                	<td style ="color:white">UrbanRural :</td>
+                	<td><input type="text" name="UrbanRural"  required="required" /></td>
+                </tr>
+
+                <tr>
+                	<td style ="color:white">RevLineCr :</td>
+                	<td><input type="text" name="RevLineCr"  required="required" /></td>
+                </tr>
+
+                 <tr>
+                	<td style ="color:white">FranchiseCode :</td>
+                	<td><input type="text" name="FranchiseCode"  required="required" /></td>
+                </tr>
+                                
+            
+          </table>
+        
+         
+             <!-- <br><button type="submit" class="btn btn-primary btn-block btn-large" style="height:50px;width:100px"><b>Predict</b></button>-->
+            <button type="submit" onclick="myFunction()" class="button btn btn-primary btn-block btn-large" style="vertical-align:middle;margin-left: 126px;"><span>Predict </span></button>
+         
+
+        </b>
+    </form>
+
+   <br>
+   <br>
+<div style ="color:red;">
+
+   {{ prediction_text }}
+</div>
+
+ </div>
+
+
+</body>
+</html>
